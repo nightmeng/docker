@@ -21,6 +21,3 @@ RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
 RUN mkdir /var/run/sshd
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
-
-# 安装vim, git, tmux
-RUN yum insall -y vim git tmux

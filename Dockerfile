@@ -9,8 +9,11 @@ RUN echo "root:123456" | chpasswd
 RUN apt-get update
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
-# 容器需要开放SSH 22端口
-EXPOSE 22
 
 # 安装常用工具
 RUN apt-get install -y vim git gcc g++
+
+# 容器需要开放SSH 22端口
+ENV LC_ALL en_US.utf8
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]

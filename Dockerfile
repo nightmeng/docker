@@ -15,5 +15,5 @@ RUN apt-get install -y vim git gcc g++
 
 # 容器需要开放SSH 22端口
 ENV LC_ALL en_US.utf8
-EXPOSE 22
+EXPOSE 2222
 CMD ["/usr/sbin/sshd", "-D"]
